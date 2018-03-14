@@ -34,7 +34,7 @@ namespace Staj
             this.dtpGirme1 = new System.Windows.Forms.DateTimePicker();
             this.dtpCixma1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCemText = new System.Windows.Forms.Label();
             this.lblNetice = new System.Windows.Forms.Label();
             this.btnHesabla = new System.Windows.Forms.Button();
             this.btnElaveEt = new System.Windows.Forms.Button();
@@ -77,19 +77,19 @@ namespace Staj
             this.label2.TabIndex = 2;
             this.label2.Text = "İşdən çıxma tarixi";
             // 
-            // label3
+            // lblCemText
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 366);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Cəm iş stajı: ";
+            this.lblCemText.AutoSize = true;
+            this.lblCemText.Location = new System.Drawing.Point(165, 95);
+            this.lblCemText.Name = "lblCemText";
+            this.lblCemText.Size = new System.Drawing.Size(65, 13);
+            this.lblCemText.TabIndex = 4;
+            this.lblCemText.Text = "Cəm iş stajı: ";
             // 
             // lblNetice
             // 
             this.lblNetice.AutoSize = true;
-            this.lblNetice.Location = new System.Drawing.Point(236, 366);
+            this.lblNetice.Location = new System.Drawing.Point(236, 95);
             this.lblNetice.Name = "lblNetice";
             this.lblNetice.Size = new System.Drawing.Size(13, 13);
             this.lblNetice.TabIndex = 5;
@@ -97,7 +97,7 @@ namespace Staj
             // 
             // btnHesabla
             // 
-            this.btnHesabla.Location = new System.Drawing.Point(32, 356);
+            this.btnHesabla.Location = new System.Drawing.Point(32, 85);
             this.btnHesabla.Name = "btnHesabla";
             this.btnHesabla.Size = new System.Drawing.Size(75, 23);
             this.btnHesabla.TabIndex = 6;
@@ -129,12 +129,12 @@ namespace Staj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 407);
+            this.ClientSize = new System.Drawing.Size(450, 149);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnElaveEt);
             this.Controls.Add(this.btnHesabla);
             this.Controls.Add(this.lblNetice);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblCemText);
             this.Controls.Add(this.dtpCixma1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpGirme1);
@@ -155,7 +155,7 @@ namespace Staj
         private System.Windows.Forms.DateTimePicker dtpGirme1;
         private System.Windows.Forms.DateTimePicker dtpCixma1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCemText;
         private System.Windows.Forms.Label lblNetice;
         private System.Windows.Forms.Button btnHesabla;
         private System.Windows.Forms.Button btnElaveEt;

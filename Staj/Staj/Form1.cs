@@ -23,10 +23,14 @@ namespace Staj
 
         private void btnHesabla_Click(object sender, EventArgs e)
         {
-            DateTime dtpGirme2 =Convert.ToDateTime(this.Controls["dtpGirme2"].Text);
-            DateTime dtpCixma2 = Convert.ToDateTime(this.Controls["dtpCixma2"].Text);
-            TimeSpan staj2 = dtpCixma2.Date.Subtract(dtpGirme2.Date);
-
+            for (int j=0;j<(i-2);j++)
+            {
+                //MessageBox.Show(i.ToString());
+                DateTime dtpGirme = Convert.ToDateTime(this.Controls["dtpGirme"].Text);
+                DateTime dtpCixma = Convert.ToDateTime(this.Controls["dtpCixma"].Text);
+                TimeSpan staj = dtpCixma.Date.Subtract(dtpGirme.Date);
+            }
+          
             TimeSpan staj1 = dtpCixma1.Value.Subtract(dtpGirme1.Value);
             int hours = staj1.Days*24;
 
@@ -36,13 +40,15 @@ namespace Staj
 
             int days = Convert.ToInt32((hours - (year * 8760)-(month*729.999))/24);
 
-            MessageBox.Show(staj2.ToString());
+            //MessageBox.Show(staj2.ToString());
             lblNetice.Text = (year + " il: " + month + " ay: " + days + " gün (±3 gün)");
         }
 
         public int i = 2;
         public int a = 64;
         public int b = 68;
+        public int c = 115;
+
 
         private void btnElaveEt_Click(object sender, EventArgs e)
         {
@@ -52,11 +58,15 @@ namespace Staj
                 addNewdtp2();
                 addNewlbl1();
                 btnElaveEt.Top = a;
+                btnHesabla.Top = c;
+                lblCemText.Top = c;
+                lblNetice.Top = c;
+                this.Height = this.Height + 30;
 
                 i++;
                 a = a + 30;
                 b = b + 30;
-                
+                c = c + 30;
             }            
         }
 
@@ -84,7 +94,7 @@ namespace Staj
             dtp.Left = 32;
             dtp.Width = 147;
             dtp.Height = 20;
-            dtp.Name = "dtpGirme" + i;
+            dtp.Name = "dtpGirme";
             //dtps.Add(Convert.ToDateTime(dtp.Name));
             return dtp;
         }
@@ -99,7 +109,7 @@ namespace Staj
             dtp.Left = 205;
             dtp.Width = 147;
             dtp.Height = 20;
-            dtp.Name = "dtpCixma" + i;
+            dtp.Name = "dtpCixma";
             return dtp;
         }
     }

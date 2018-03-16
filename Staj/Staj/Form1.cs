@@ -16,13 +16,20 @@ namespace Staj
         public Form1()
         {
             InitializeComponent();
+            lables.Add(lbl1);
+            Cixmatps.Add(dtpCixma1);
+            Girmedtps.Add(dtpGirme1);
         }
 
 
-        public List<DateTimePicker> dtps = new List<DateTimePicker>();
+        List<Label> lables = new List<Label>();
+        List<DateTimePicker> Cixmatps = new List<DateTimePicker>();
+        List<DateTimePicker> Girmedtps = new List<DateTimePicker>();
 
+        
         private void btnHesabla_Click(object sender, EventArgs e)
         {
+            
             for (int j=0;j<(i-2);j++)
             {
                 //MessageBox.Show(i.ToString());
@@ -36,9 +43,9 @@ namespace Staj
 
             int year = Convert.ToInt32(hours / (365*24));
 
-            int month = Convert.ToInt32(Math.Floor((hours-year*8760)/729.999));
+            int month = Convert.ToInt32((hours-year*8760)/744);
 
-            int days = Convert.ToInt32((hours - (year * 8760)-(month*729.999))/24);
+            int days = Convert.ToInt32((hours - (year * 8760)-(month*744))/24);
 
             //MessageBox.Show(staj2.ToString());
             lblNetice.Text = (year + " il: " + month + " ay: " + days + " gün (±3 gün)");
@@ -80,10 +87,11 @@ namespace Staj
             lbl.Height = 20;
             lbl.Name = "lbl" + i;
             lbl.Text = i.ToString();
-
+            lables.Add(lbl);
             return lbl;
         }
 
+        
         public System.Windows.Forms.DateTimePicker addNewdtp1()
         {
             System.Windows.Forms.DateTimePicker dtp = new System.Windows.Forms.DateTimePicker();
@@ -94,8 +102,8 @@ namespace Staj
             dtp.Left = 32;
             dtp.Width = 147;
             dtp.Height = 20;
-            dtp.Name = "dtpGirme";
-            //dtps.Add(Convert.ToDateTime(dtp.Name));
+            dtp.Name = "dtpGirme"+i;
+            Girmedtps.Add(dtp);
             return dtp;
         }
 
@@ -109,8 +117,18 @@ namespace Staj
             dtp.Left = 205;
             dtp.Width = 147;
             dtp.Height = 20;
-            dtp.Name = "dtpCixma";
+            dtp.Name = "dtpCixma"+i;
+            Cixmatps.Add(dtp);
             return dtp;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Cixmatps)
+            {
+                MessageBox.Show(item.Name);
+            }
+            
         }
     }
 }

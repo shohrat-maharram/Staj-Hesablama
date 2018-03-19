@@ -32,7 +32,6 @@ namespace Staj
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dtpGirme1 = new System.Windows.Forms.DateTimePicker();
-            this.dtpCixma1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCemText = new System.Windows.Forms.Label();
             this.lblNetice = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@ namespace Staj
             this.btnElaveEt = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.dtpCixma1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -55,19 +55,10 @@ namespace Staj
             // 
             this.dtpGirme1.CustomFormat = "dd.MM.yyyy";
             this.dtpGirme1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpGirme1.Location = new System.Drawing.Point(32, 34);
+            this.dtpGirme1.Location = new System.Drawing.Point(32, 33);
             this.dtpGirme1.Name = "dtpGirme1";
             this.dtpGirme1.Size = new System.Drawing.Size(147, 20);
-            this.dtpGirme1.TabIndex = 1;
-            // 
-            // dtpCixma1
-            // 
-            this.dtpCixma1.CustomFormat = "dd.MM.yyyy";
-            this.dtpCixma1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpCixma1.Location = new System.Drawing.Point(205, 34);
-            this.dtpCixma1.Name = "dtpCixma1";
-            this.dtpCixma1.Size = new System.Drawing.Size(147, 20);
-            this.dtpCixma1.TabIndex = 3;
+            this.dtpGirme1.TabIndex = 3;
             // 
             // label2
             // 
@@ -128,7 +119,7 @@ namespace Staj
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(352, 90);
+            this.button1.Location = new System.Drawing.Point(352, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -136,20 +127,29 @@ namespace Staj
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dtpCixma1
+            // 
+            this.dtpCixma1.CustomFormat = "dd.MM.yyyy";
+            this.dtpCixma1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpCixma1.Location = new System.Drawing.Point(205, 33);
+            this.dtpCixma1.Name = "dtpCixma1";
+            this.dtpCixma1.Size = new System.Drawing.Size(147, 20);
+            this.dtpCixma1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 149);
+            this.ClientSize = new System.Drawing.Size(450, 126);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnElaveEt);
             this.Controls.Add(this.btnHesabla);
             this.Controls.Add(this.lblNetice);
             this.Controls.Add(this.lblCemText);
-            this.Controls.Add(this.dtpCixma1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpGirme1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dtpCixma1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -165,7 +165,6 @@ namespace Staj
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpGirme1;
-        private System.Windows.Forms.DateTimePicker dtpCixma1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCemText;
         private System.Windows.Forms.Label lblNetice;
@@ -173,6 +172,7 @@ namespace Staj
         private System.Windows.Forms.Button btnElaveEt;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpCixma1;
     }
 }
 

@@ -25,7 +25,7 @@ namespace Staj
         List<DateTimePicker> Cixmatps = new List<DateTimePicker>();
         List<DateTimePicker> Girmedtps = new List<DateTimePicker>();
 
-        //Adding new internship block
+        //Adding new internship block 
         public int i = 2;
         public int a = 64;
         public int b = 68;

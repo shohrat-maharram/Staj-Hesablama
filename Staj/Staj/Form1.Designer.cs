@@ -38,7 +38,6 @@ namespace Staj
             this.btnHesabla = new System.Windows.Forms.Button();
             this.btnElaveEt = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dtpCixma1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -117,16 +116,6 @@ namespace Staj
             this.lbl1.TabIndex = 9;
             this.lbl1.Text = "1";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(352, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dtpCixma1
             // 
             this.dtpCixma1.CustomFormat = "dd.MM.yyyy";
@@ -141,7 +130,6 @@ namespace Staj
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 126);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnElaveEt);
             this.Controls.Add(this.btnHesabla);
@@ -171,7 +159,6 @@ namespace Staj
         private System.Windows.Forms.Button btnHesabla;
         private System.Windows.Forms.Button btnElaveEt;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dtpCixma1;
     }
 }

@@ -19,7 +19,6 @@ namespace Staj
             lables.Add(lbl1);
             Cixmatps.Add(dtpGirme1);
             Girmedtps.Add(dtpGirme1);
-            //colculateInternship();
         }
 
         List<Label> lables = new List<Label>();
@@ -102,12 +101,12 @@ namespace Staj
         List<int> months = new List<int>();
         List<int> days = new List<int>();
 
-        // Birinci ise girme tarixi
+        // Recuitment date variables
         int İseGirmeİli = 0;
         int İseGirmeAyi = 0;
         int İseGirmeGunu = 0;
 
-        // Birinci isden Cixma tarixi
+        // Deactivation date variables
         int İsdenCixmaİli = 0;
         int İsdenCixmaAyi = 0;
         int İsdenCixmaGunu = 0;
@@ -121,6 +120,7 @@ namespace Staj
         //Day
         int day = 0;
 
+        //Colculating years, months and days between dates
         List<DateTime> dates = new List<DateTime>();
         private void colculateInternship()
         {
@@ -149,7 +149,7 @@ namespace Staj
         }
 
 
-        //
+        //Getting data from datetimepickers
         private void assignDates(DateTime qebulIli, DateTime cixmaIli)
         {
             // Birinci ise girme tarixi
@@ -163,7 +163,7 @@ namespace Staj
             İsdenCixmaGunu = cixmaIli.Day;
         }
 
-        //Calculate Year
+        //Calculate Years between dates
         public int ColculateYear()
         {
             //assignDates();
@@ -189,7 +189,7 @@ namespace Staj
             return year;
         }
 
-        //Calculate Month
+        //Calculate Months between dates
         public int ColculateMonth()
         {
             //assignDates();
@@ -229,7 +229,7 @@ namespace Staj
             return month;
         }
 
-        //Calculate Day
+        //Calculate Days between dates
         public int ColculateDay()
         {
             //assignDates();
@@ -269,18 +269,44 @@ namespace Staj
 
         //Calculate Internship
         private void btnHesabla_Click(object sender, EventArgs e)
-        {            
-            lblNetice.Text = (ColculateYear() + " il: " + ColculateMonth() + " ay: " + ColculateDay() + " gün");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
             colculateInternship();
+            int sumYears = 0;
+            int sumMonths = 0;
+            int sumDays = 0;
 
-            for (int i = 0; i < years.Count; i++)
+            int realSumYears = 0;
+            int realSumMonths = 0;
+            int realSumDays = 0;
+            for (int i = 0; i <years.Count; i++)
             {
-                MessageBox.Show(years[i].ToString());
+                sumYears += years[i];
+                sumMonths += months[i];
+                sumDays += days[i];
             }
+            if (sumDays >= 30)
+            {
+                sumMonths +=Convert.ToInt32(Math.Floor(sumDays / 30.0));
+
+                realSumDays = Convert.ToInt32((sumDays % 30));
+            }
+            else
+            {
+                realSumDays = sumDays;
+            }
+
+            if (sumMonths>=12)
+            {
+                realSumYears = sumYears+(sumMonths/12);
+                realSumMonths = (sumMonths % 12);
+            }
+            else
+            {
+                realSumYears = sumYears;
+                realSumMonths = sumMonths;
+            }            
+
+            lblNetice.Text = (realSumYears + " il: " + realSumMonths + " ay: " + realSumDays + " gün");
         }
     }
 }
